@@ -80,7 +80,7 @@ def main():
 
     # Load data
     data = pd.read_csv(catalog_path)
-    xr, yr = data['X'], data['Y']
+    xr, yr = data['X_8.125'], data['Y_8.125']
 
     # Load and crop background
     im, scale_x, scale_y, center_x, center_y = load_and_crop_image(image_path)
