@@ -1,0 +1,15 @@
+body{
+  color: black;}
+  
+#blink_text{	
+  animation-name:blink;
+  width:280px;
+  animation-duration:2s;
+  animation-timing-function:ease-in;
+  animation-iteration-count:Infinite;
+  }
+
+@keyframes blink{
+  0%{color:red;}
+  50%{color:white;}
+  100%{color:red;}
