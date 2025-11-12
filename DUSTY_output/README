@@ -1,1 +1,63 @@
 outputs file from DUSTY (259 lines)
+
+used DUSTYV2
+https://github.com/ivezic/dusty/tree/master/releaseV2
+
+with some small changes following the Appendix of:
+https://ui.adsabs.harvard.edu/abs/2012A%26A...543A..36G/abstract
+Groenewegen (2012)
+
+
+[Admins-MBP:radiative/dustyexample/dusty77] mmessine% diff dustyV2_groen.f dustyV2.f
+359,360c359,360
+< c     Initialize lambda array               
+<       read(4,*,END=99) (lambda(iL), iL = 1, npL)       
+---
+> c     Initialize lambda array                                                   
+>       read(4,*,END=99) (lambda(iL), iL = 1, npL)                                
+591c591
+<          IF(denstyp.ge.1.OR.RDW) THEN                                           
+---
+>          IF(denstyp.eq.4.OR.RDW) THEN                                           
+1347c1347
+<       EtaRat = 10.0                                                              
+---
+>       EtaRat = 4.0                                                              
+1943c1943
+<           IF (denstyp.gt.1.OR.RDW) THEN                                         
+---
+>           IF (denstyp.eq.4.OR.RDW) THEN                                         
+1952c1952
+<          IF (denstyp.gt.1.OR.RDW) THEN                                          
+---
+>          IF (denstyp.eq.4.OR.RDW) THEN                                          
+7376,7377c7376,7377
+<       IF (denstyp.ge.1.OR.RDW) THEN                                    
+<         IF (denstyp.ge.1) THEN                                                  
+---
+>       IF (denstyp.eq.4.OR.RDW) THEN                                    
+>         IF (denstyp.EQ.4) THEN                                                  
+7394,7395c7394
+< c       n.b. Gamma(nY) is removed     
+<         write(*,*)     SigExfid, " extinction crosssection sigmaQeff"                                      
+---
+> c       n.b. Gamma(nY) is removed                                               
+8628,8629c8627
+<           aveV = 4./3.*Pi*a1**3      
+<           write(*,*) a1, " single grain size "                                           
+---
+>           aveV = 4./3.*Pi*a1**3                                                 
+8635,8636c8633
+<            aveV = 4./3.*Pi*a3ave/Cnorm  
+<            write(*,*) (a3ave/Cnorm)**0.33, " average grain size cubic"                                        
+---
+>            aveV = 4./3.*Pi*a3ave/Cnorm                                          
+9515c9512
+<         DO iXin = 1, Nin-1                                                        
+---
+>         DO iXin = 1, Nin                                                        
+9688,9689c9685
+<                 
+<                                                                                
+---
+>                                                                                 
