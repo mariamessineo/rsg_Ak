@@ -1,1 +1,5 @@
+These files are a rebinned versions of Allard's models (circa 7700 lines).
 
+Columns: Wave   lambda*Flambda
+
+This is prepared to run DUSTY with option input=4
